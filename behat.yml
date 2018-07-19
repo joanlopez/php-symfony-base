@@ -1,0 +1,15 @@
+default:
+    suites:
+        core:
+            project_root: '%paths.base%'
+            paths: ['%paths.base%/tests/Acceptance/features']
+            contexts: [Imbo\BehatApiExtension\Context\ApiContext]
+            filters:
+                tags: '~@skipped'
+
+    extensions:
+        Imbo\BehatApiExtension:
+            apiClient:
+                base_uri: http://api:8888
+                timeout: 5.0
+                verify: false
